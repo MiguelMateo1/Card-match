@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import Parallax from 'parallax-js'
-import moon from './assets/moon5.png'
-import front from './assets/front5.png'
-import mid from './assets/mid5.png'
-import clif from './assets/clif5.png'
+import moon from '../assets/moon5.png'
+import front from '../assets/front5.png'
+import mid from '../assets/mid5.png'
+import clif from '../assets/clif5.png'
 
 const Backgound = () => {
     const sceneRef = useRef(null);

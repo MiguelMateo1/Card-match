@@ -1,4 +1,5 @@
-import Backgound from './Background'
+import Backgound from './components/Background'
+import CardsBox from './components/CardsBox'
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <section>
       <Backgound />
+      <CardsBox />
     </section>
   )
 }
