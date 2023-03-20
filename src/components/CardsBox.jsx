@@ -7,7 +7,8 @@ const CardsBox = () => {
     return (
         <section className='drag-area'>
             <div id='cards-box'>
-             </div>
+                <div className='snow-cap'></div>
+            </div>
         </section>
         )
 }

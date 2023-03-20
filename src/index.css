@@ -180,10 +180,10 @@ section {
   /* left: -3%; */
   width: 107%;
   height: 100vh;
-  background: url('./assets/bg.png');
+  background: url('./assets/bg-night.png');
   background-size: cover;
   z-index: 1;
-  background-position: 30%;
+  background-position: 36%;
 }
 
 
@@ -243,5 +243,15 @@ section {
   width: 500px;
   height: 350px;
   box-shadow: var(--shadow-3);
+}
+
+.snow-cap {
+  position: absolute;
+  top: -3px;
+  left: -5px;
+  width: 100px;
+  height: 100px;
+  background: url('./assets/snow-cap2.png');
+  background-size: cover;
 }
 
