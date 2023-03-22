@@ -2,7 +2,8 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-const Snow = () => {
+const Snow = (props) => {
+  const snow = props.amount
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -27,7 +28,7 @@ const Snow = () => {
             },
             "particles": {
             "number": {
-              "value": 32,
+              "value": snow,
               "density": {
                 "enable": true,
                 "value_area": 1319.1921726041152
@@ -70,13 +71,6 @@ const Snow = () => {
                 "size_min": 0.1,
                 "sync": false
               }
-            },
-            "line_linked": {
-              "enable": false,
-              "distance": 329.27747114902184,
-              "color": "#ffffff",
-              "opacity": 0.4,
-              "width": 1
             },
             "move": {
               "enable": true,
