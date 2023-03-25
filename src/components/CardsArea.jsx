@@ -1,12 +1,15 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import GetCards from "./GetCards"
 import IntroCard from "./IntroCard"
+import Menu from "./Menu"
+import SelectLevel from "./SelectLevel"
 
-const CardsArea = ({active}) => {
+const CardsArea = ({active, setActive }) => {
 
+    const [levelSelect, setLevelSelect] = useState(false)
     const cardArea = useRef(null)
 
-    function showCards () {
+    function startCards () {
         if (active == true) {
             cardArea.current.classList.add('active')
         } else {
@@ -23,14 +26,33 @@ const CardsArea = ({active}) => {
     }
 
     useEffect (() => {
-        showCards()
+        startCards()
         cardsContainer()
     }), [active];
 
+    const startBtnHandle = () => {
+        setActive(true)
+        if (levelSelect) {
+            setLevelSelect(false)
+        }
+    }
+
+    const endBtnHandle = () => {
+        setActive(!true)
+    }
+
+    const handleLevelBtn = () => {
+        setLevelSelect(!levelSelect)
+    }
+
     return (
-        <section ref={cardArea} className='cards'>
-            {active ? <GetCards/> : <IntroCard/>}
-        </section>
+        <>
+            {!levelSelect && <Menu start={startBtnHandle} end={endBtnHandle} active={active} levelSelect={handleLevelBtn}/>}
+            {levelSelect && <SelectLevel levelSelect={levelSelect} setLevelSelect={setLevelSelect}/>}
+            <section ref={cardArea} className='cards'>
+                {active ? <GetCards/> : <IntroCard hide={levelSelect}/>}
+            </section>
+        </>
         )
 }
 

@@ -1,5 +1,6 @@
 import Backgound from './components/Background'
-import CardsBox from './components/CardsBox'
+import MainContainer from './components/MainContainer'
+import WeatherBox from './components/WeatherToggle'
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
   return (
     <section>
       <Backgound />
-      <CardsBox />
+      <MainContainer />
+      <WeatherBox />
     </section>
   )
 }

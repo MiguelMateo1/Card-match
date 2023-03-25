@@ -21,7 +21,6 @@ function useDragger(id) {
     if (!container) throw new Error("target element must have a parent");
 
 
-
     const onMouseDown = (e) => {
       isClicked.current = true;
       coords.current.startY = e.clientY;
@@ -41,7 +40,6 @@ function useDragger(id) {
 
       const nextX = e.clientX - coords.current.startX + coords.current.lastX;
       const nextY = e.clientY - coords.current.startY + coords.current.lastY;
-      console.log(nextX, nextX)
 
       target.style.top = `${nextY}px`;
       target.style.left = `${nextX}px`;

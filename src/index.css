@@ -12,15 +12,6 @@ html {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   /* colors */
-  --primary-100: #aac5ee;
-  --primary-200: #8db1e8;
-  --primary-300: #709de3;
-  --primary-400: #538add;
-  --primary-500: #3676d7;
-  --primary-600: #2e65b8;
-  --primary-700: #265499;
-  --primary-800: #1f437a;
-  --primary-900: #17325b;
 
   /* grey */
   --grey-100: #f1f5f9;
@@ -73,7 +64,7 @@ h3,
 h4,
 h5 {
   margin: 0;
-  margin-bottom: 1.38rem;
+  /* margin-bottom: 1.38rem; */
   font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1.3;
@@ -213,7 +204,7 @@ section {
   width: 300px;
   height: 280px;
   box-shadow: var(--shadow-3);
-  transition: var(--transition);
+  transition: 0.3s ease-in-out width;
   display: grid;
   grid-template-rows: 30px auto;
   align-items: center;
@@ -239,22 +230,22 @@ section {
 .title {
   z-index: 10;
   position: absolute;
-  top: 22%;
+  top: 20%;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .title-img {
   width: 100%;
   max-width: 450px;
-  z-index: 5;
 }
 /* menu */
 .menu {
   z-index: 10;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .menu button {
@@ -270,8 +261,9 @@ section {
 /* cards area */
 .cards {
   height: 110px;
-  width: 150px;
+  width: 180px;
   transition: var(--transition);
+  position: relative;
 }
 
 .cards.active {
@@ -279,7 +271,38 @@ section {
   width: 100%;
 }
 
-/* card display */
+.level-container {
+  position: absolute;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  gap: 4px;
+}
+
+.level-row {
+  display: flex;
+  gap: 70px;
+  border-bottom: 1px rgba(90, 86, 86, 0.4) solid;
+  border-top: 1px rgba(90, 86, 86, 0.2) solid;
+  box-shadow: var(--shadow-3);
+}
+
+.level-row span {
+ margin-left: -40px;
+ font-size: .85rem;
+ color: #5e7da8;
+}
+
+.level-btn {
+  transform: rotate(90deg);
+  font-size: .9rem;
+  padding: 9px;
+  color:#c5c5c5;
+}
+/* intro card display */
 .intro-img-container {
   position: relative;
   width: 100%;

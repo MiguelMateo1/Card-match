@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useDragger from '../hooks/useDragger';
 import Snow from '../Particles';
 import { FaSnowflake } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 
 
 const WeatherBox = () => {
@@ -29,7 +29,7 @@ const WeatherBox = () => {
                     className='snow-icon'/>
                 </button>
                 <button type='button' className='btn toggle-btn' onClick={toggleSnow}>
-                    <FaSun
+                    <FaMoon
                         style={{color: snow <= -30 && "#0f172a" || 
                         snow == 50 && "#94a3b8" || 
                         snow == 130 && "f1f5f9"}} 
