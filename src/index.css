@@ -243,19 +243,21 @@ section {
 /* menu */
 .menu {
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
 .menu button {
-  
+  margin: 0 5px;
 }
 
 .end-btn {
   position: absolute;
   right: 5px;
   top: 5px;
+}
+
+.level-selected-text {
+  font-size: 1rem;
+  margin-top: 3px;
 }
 
 /* cards area */
@@ -272,6 +274,7 @@ section {
 }
 
 .level-container {
+  visibility: hidden;
   position: absolute;
   padding: 15px;
   height: 100%;
@@ -280,6 +283,10 @@ section {
   flex-direction: column;
   z-index: 2;
   gap: 4px;
+}
+
+.level-container.active {
+  visibility: visible;
 }
 
 .level-row {
