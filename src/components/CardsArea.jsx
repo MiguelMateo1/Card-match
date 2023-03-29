@@ -6,8 +6,15 @@ import SelectLevel from "./SelectLevel"
 
 const CardsArea = ({active, setActive }) => {
 
-    const [levelSelect, setLevelSelect] = useState(false)
+    const [levelSelectMenu, setLevelSelectMenu] = useState(false)
     const cardArea = useRef(null)
+    const [level, setLevel] = useState({level: 1, cards: 16})
+
+    // get selected level from SelectLevel component
+    const getLevel = (selectedLevel) => {
+        setLevel(selectedLevel)
+        console.log("current level", level)
+    }
 
     function startCards () {
         if (active == true) {
@@ -30,10 +37,11 @@ const CardsArea = ({active, setActive }) => {
         cardsContainer()
     }), [active];
 
+    // Start, Level, and End button.. onClick hanle fucntion
     const startBtnHandle = () => {
         setActive(true)
-        if (levelSelect) {
-            setLevelSelect(false)
+        if (levelSelectMenu) {
+            setLevelSelectMenu(false)
         }
     }
 
@@ -42,15 +50,16 @@ const CardsArea = ({active, setActive }) => {
     }
 
     const handleLevelBtn = () => {
-        setLevelSelect(!levelSelect)
+        setLevelSelectMenu(!levelSelectMenu)
     }
 
     return (
         <>
-            {!levelSelect && <Menu start={startBtnHandle} end={endBtnHandle} active={active} levelSelect={handleLevelBtn}/>}
-            {levelSelect && <SelectLevel levelSelect={levelSelect} setLevelSelect={setLevelSelect}/>}
+            {!levelSelectMenu && <Menu start={startBtnHandle} end={endBtnHandle} active={active}
+             levelSelect={handleLevelBtn} />}
+            <SelectLevel levelSelect={levelSelectMenu} setLevelSelect={setLevelSelectMenu} levels={getLevel}/>
             <section ref={cardArea} className='cards'>
-                {active ? <GetCards/> : <IntroCard hide={levelSelect}/>}
+                {active ? <GetCards/> : <IntroCard hide={levelSelectMenu}/>}
             </section>
         </>
         )
