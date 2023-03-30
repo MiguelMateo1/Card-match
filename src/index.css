@@ -213,8 +213,27 @@ section {
 }
 
 #cards-box.active {
-  width: 500px;
-  height: 350px;
+  max-width: 710px;
+  /* margin: 0 40px; */
+  max-height: 800px;
+  width: auto;
+  width: 70%;
+  height: auto;
+  padding: 0;
+  padding-bottom: 30px;
+  gap: 10px;
+}  
+
+/* mobile screen */
+@media screen and (max-width:600px) {
+  #cards-box.active {
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+  }  
 }
 
 .snow-cap {
@@ -252,7 +271,7 @@ section {
 .end-btn {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 8px;
 }
 
 .level-selected-text {
@@ -260,12 +279,14 @@ section {
   margin-top: 3px;
 }
 
-/* cards area */
 .cards {
   height: 110px;
   width: 180px;
   transition: var(--transition);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards.active {
@@ -273,47 +294,87 @@ section {
   width: 100%;
 }
 
-.level-container {
-  visibility: hidden;
-  position: absolute;
-  padding: 15px;
+/* card-display area */
+.card-display {
   height: 100%;
   width: 100%;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  z-index: 2;
-  gap: 4px;
+  gap: 5px 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.level-container.active {
-  visibility: visible;
+.card-display aside {
+  width: 70px;
+  height: 50px;
+  transform-style: preserve-3d;
+  transition: var(--transition);
 }
 
-.level-row {
-  display: flex;
-  gap: 70px;
-  border-bottom: 1px rgba(90, 86, 86, 0.4) solid;
-  border-top: 1px rgba(90, 86, 86, 0.2) solid;
-  box-shadow: var(--shadow-3);
+.card-display .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background-color: rgb(17, 17, 24);
+  background-image: url(/images/logo.png);
+  background-position: center;
+  background-size: 170%;
+  border: 1px solid rgba(77, 58, 58, 0.5);
+  cursor: pointer;
+  margin: auto;
 }
 
-.level-row span {
- margin-left: -40px;
- font-size: .85rem;
- color: #5e7da8;
+
+.card-display .front:hover {
+  animation: cardShake .3s;
 }
 
-.level-btn {
-  transform: rotate(90deg);
-  font-size: .9rem;
-  padding: 9px;
-  color:#c5c5c5;
+.card-display .back  {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background-color: rgb(70, 70, 83);
+  background-image: url(/images/logo.png);
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgba(77, 58, 58, 0.5);
+  transform: rotateY(180deg);
+  cursor: pointer;
 }
+
+@media screen and (min-width:600px) {
+  .card-display aside {
+    width: 90px;
+    height: 70px;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .card-display aside {
+    width: 100px;
+    height: 80px;
+  }
+}
+
+@keyframes cardShake {
+  0%   {transform: rotate(2deg);}
+  20%  {transform: rotate(0deg);}
+  40% {transform: rotate(-2deg);}
+  60%  {transform: rotate(0deg);}
+  80%   {transform: rotate(2deg);}
+}
+
 /* intro card display */
 .intro-img-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  height: 110px;
+  width: 180px;
   border-radius: 10px;
 }
 
@@ -321,8 +382,8 @@ section {
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  height: 110px;
+  width: 180px;
   transform-style: preserve-3d;
   transition: var(--transition);
   animation: introCard 5s linear infinite;
@@ -362,6 +423,45 @@ section {
   60%  {transform: rotateY(0deg);}
   80%   {transform: rotateY(0deg);}
 }
+
+/* level select area */
+.level-container {
+  visibility: hidden;
+  position: absolute;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  gap: 4px;
+}
+
+.level-container.active {
+  visibility: visible;
+}
+
+.level-row {
+  display: flex;
+  gap: 70px;
+  border-bottom: 1px rgba(90, 86, 86, 0.4) solid;
+  border-top: 1px rgba(90, 86, 86, 0.2) solid;
+  box-shadow: var(--shadow-3);
+}
+
+.level-row span {
+ margin-left: -40px;
+ font-size: .85rem;
+ color: #5e7da8;
+}
+
+.level-btn {
+  transform: rotate(90deg);
+  font-size: .9rem;
+  padding: 9px;
+  color:#c5c5c5;
+}
+
 /* game stats */
 .stats-area {
   visibility: collapse;
@@ -391,7 +491,7 @@ section {
   display: flex;
   gap: 25px;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 5;
   padding: 8px 25px;
   background-color: rgba(255, 255, 255, 0.06);
@@ -426,4 +526,15 @@ section {
 
 .toggle-btn:hover {
 transform: translateY(-1px)
+}
+
+@media screen and (max-width:600px) {
+  #toggle-box {
+    gap: 20px;
+    padding: 6px 20px;
+  }
+  
+  .snow-icon, .day-icon {
+    font-size: 1.3rem;
+  }
 }
