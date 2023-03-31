@@ -304,6 +304,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  transition: var(--transition);
 }
 
 .card-display aside {
@@ -311,6 +312,13 @@ section {
   height: 50px;
   transform-style: preserve-3d;
   transition: var(--transition);
+}
+
+aside.active {
+  transform: rotateY(180deg)
+}
+.card-display aside.match {
+  filter: blur(.5px);
 }
 
 .card-display .front {
@@ -340,7 +348,6 @@ section {
   border-radius: 10px;
   backface-visibility: hidden;
   background-color: rgb(70, 70, 83);
-  background-image: url(/images/logo.png);
   background-position: center;
   background-size: cover;
   border: 1px solid rgba(77, 58, 58, 0.5);
