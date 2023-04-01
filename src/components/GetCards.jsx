@@ -15,7 +15,6 @@ const GetCards = ({numOfCards}) => {
     let matchedCards = [];
 
     function handleClick (e) {
-        // backOfcard.push(e.target.parentElement);
         console.log(selectedCards)
         console.log(backOfcard)
         
