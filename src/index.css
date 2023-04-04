@@ -502,7 +502,6 @@ aside.active {
   transition: var(--transition);
   display: flex;
   gap: 20px;
-  /* flex-direction: column; */
 }
 
 .stats-title {
