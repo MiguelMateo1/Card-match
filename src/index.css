@@ -138,7 +138,6 @@ section {
 
 .container {
   position: absolute;
-  /* left: -3%; */
   width: 107%;
   height: 100vh;
   background: url('./assets/bg-night.png');
@@ -146,7 +145,6 @@ section {
   z-index: 1;
   background-position: 36%;
 }
-
 
 .container #scene .layer {
   position: absolute;
@@ -161,9 +159,8 @@ section {
   bottom: 0px;
   left: 0px;
   width: 100%;
-  /* height: 30%; */
   object-fit: cover;
-  background-position: 50%;
+  /* background-position: 50%; */
 }
 
 .moon img{
@@ -287,6 +284,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 }
 
 .cards.active {
@@ -317,8 +315,8 @@ section {
 aside.active {
   transform: rotateY(180deg)
 }
-.card-display aside.match {
-  filter: blur(.5px);
+.matched {
+  visibility: hidden;
 }
 
 .card-display .front {
@@ -431,6 +429,23 @@ aside.active {
   80%   {transform: rotateY(0deg);}
 }
 
+/* winner screen */
+.winner-screen {
+  padding-top: 20%;
+  height: 250px;
+  color: rgb(106, 139, 106);
+}
+.winner-screen h5 {
+  text-transform: none;
+}
+
+/* mobile screen */
+@media screen and (max-width:600px) {
+  .winner-screen {
+    width: 80vw;
+  }  
+}
+
 /* level select area */
 .level-container {
   visibility: hidden;
@@ -471,12 +486,11 @@ aside.active {
 
 /* game stats */
 .stats-area {
-  visibility: collapse;
-  height: 30px;
-  width: 160px;
+  visibility: hidden;
+  z-index: 5;
   position: absolute;
-  left: 10px;
-  bottom: -30px;
+  left: 16px;
+  bottom: -80px;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -486,10 +500,26 @@ aside.active {
   border-bottom-right-radius: 10px;
   z-index: 5;
   transition: var(--transition);
+  display: flex;
+  gap: 20px;
+  /* flex-direction: column; */
+}
+
+.stats-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stats-data {
+  display: flex;
+  gap: 10px;
 }
 
 .stats-area.active {
   visibility: visible;
+  height: 50px;
+  width: 200px;
 }
 
 /* toggle box */
