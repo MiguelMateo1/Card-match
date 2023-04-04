@@ -59,7 +59,7 @@ const CardsArea = ({active, setActive }) => {
              levelSelect={handleLevelBtn} selectedLevel={level.level} />}
             <SelectLevel levelSelect={levelSelectMenu} setLevelSelect={setLevelSelectMenu} levels={getLevel}/>
             <section ref={cardArea} className='cards'>
-                {active ? <GetCards numOfCards={level.cards}/> : <IntroCard hide={levelSelectMenu}/>}
+                {active ? <GetCards numOfCards={level} test={setLevelSelectMenu}/> : <IntroCard hide={levelSelectMenu}/>}
             </section>
         </>
         )

@@ -1,9 +1,18 @@
 
 export const cards = (num) => {
+  let randomNum = [];
   let cards = []
   let card = {}
+
+  // loop to get num of cards then shuffle them
+  // to get a random #(img) for selecting random images
+  for (let i = 1; i <= num; i++){
+    randomNum.push(i)
+  }
+  shuffleCards(randomNum)
+  // loop to push card object with img/key to the cards array
   for (let i = 0; i < num; i++){
-    card = {img: `/images/test.png`, key: i}
+    card = {img: `/images/pic${randomNum[i]}.png`, key: i}
     cards.push(card)
   }
   console.log(cards)

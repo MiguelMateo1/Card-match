@@ -22,7 +22,7 @@ const MainContainer = () => {
             <div id='cards-box'>
                 <div className='snow-cap'></div>
                 <CardsArea active={showCards} setActive={setShowCards}/>
-                <GameStats active={showCards} />
+                {/* <GameStats active={showCards} /> */}
             </div>
         </section>
         )

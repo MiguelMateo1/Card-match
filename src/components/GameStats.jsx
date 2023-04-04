@@ -1,4 +1,4 @@
-import { useRef,useEffect, useState } from "react"
+import { useRef,useEffect } from "react"
 
 const GameStats = ({active,matched,moves}) => {
     const statsBox =  useRef(null)
@@ -10,7 +10,6 @@ const GameStats = ({active,matched,moves}) => {
             statsBox.current.classList.remove('active')
         }
     }
-    console.log("stats ran")
 
     useEffect (() => {
         showStats()
