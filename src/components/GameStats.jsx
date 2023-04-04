@@ -1,15 +1,16 @@
-import { useRef,useEffect } from "react"
+import { useRef,useEffect, useState } from "react"
 
-const GameStats = ({active}) => {
-    const startsBox =  useRef(null)
+const GameStats = ({active,matched,moves}) => {
+    const statsBox =  useRef(null)
     
     function showStats () {
         if (active == true) {
-            startsBox.current.classList.add('active')
+            statsBox.current.classList.add('active')
         } else {
-            startsBox.current.classList.remove('active')
+            statsBox.current.classList.remove('active')
         }
     }
+    console.log("stats ran")
 
     useEffect (() => {
         showStats()
@@ -17,7 +18,16 @@ const GameStats = ({active}) => {
 
     return (
         <>
-            <aside ref={startsBox} className="stats-area"></aside>
+            <section ref={statsBox} className="stats-area">
+                <div className="stats-title">
+                    <h6>moves</h6>
+                    <h6>{moves}</h6>
+                </div>
+                <div className="stats-data">
+                    <h6>matched</h6>
+                    <h6>{matched}</h6>
+                </div>
+            </section>
         </>
         )
 }
