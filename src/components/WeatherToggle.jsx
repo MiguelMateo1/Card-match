@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Snow from '../Particles';
 import { FaSnowflake } from "react-icons/fa";
 
-
 const WeatherBox = () => {
 
     const [snow,setSnow] = useState(-30)
