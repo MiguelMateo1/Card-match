@@ -18,10 +18,6 @@ const GameStats = ({active,matched,moves}) => {
     return (
         <>
             <section ref={statsBox} className="stats-area">
-                <div className="stats-title">
-                    <h6>moves</h6>
-                    <h6>{moves}</h6>
-                </div>
                 <div className="stats-data">
                     <h6>matched</h6>
                     <h6>{matched}</h6>
