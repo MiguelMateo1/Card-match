@@ -26,7 +26,6 @@ const GetCards = ({numOfCards}) => {
         }
         return;
     }
-
     useEffect(() => {
         showWonScreen()
     },[matchedCards]);
