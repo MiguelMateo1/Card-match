@@ -1,4 +1,6 @@
-const DisplayCards = ({numOfCards,m}) => {
+import { memo } from "react";
+
+const DisplayCards = ({numOfCards}) => {
 
     const cards = (num) => {
         let randomNum = [];
@@ -16,7 +18,6 @@ const DisplayCards = ({numOfCards,m}) => {
         card = {img: `/images/pic${randomNum[i]}.png`, key: i}
         cards.push(card)
         }
-        console.log(cards)
         return cards
     }
     
@@ -67,4 +68,4 @@ const DisplayCards = ({numOfCards,m}) => {
         return displayCards(getRandomOrder(cards(numOfCards.cards / 2)))
 }
 
-export default DisplayCards
+export default memo(DisplayCards);
