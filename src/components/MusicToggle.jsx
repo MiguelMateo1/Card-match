@@ -26,7 +26,7 @@ function MusicToggle() {
     };
 
     useEffect(() => {
-        audioElement.current.volume = 0.05
+        audioElement.current.volume = 0.06
         if (isPlaying) {
             audioElement.current.play();
         } else {
