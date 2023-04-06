@@ -532,14 +532,14 @@ aside.active {
   }  
 }
 
-.snow-icon, .day-icon {
+.snow-icon {
   filter: blur(.5px);
   margin-top: 3px;
   transition: transform 1.4s ease-out;
   font-size: 1.7rem;
 }
 
-.toggle-btn:hover .snow-icon, .toggle-btn:hover .day-icon {
+.toggle-btn:hover .snow-icon {
   transform: rotate(320deg);
 }
 
@@ -561,11 +561,106 @@ transform: translateY(-1px)
 
 @media screen and (max-width:600px) {
   #toggle-box {
-    gap: 20px;
     padding: 6px 20px;
   }
   
   .snow-icon, .day-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* music toggle */
+#music-box {
+  position: absolute;
+  /* overflow: hidden; */
+  bottom: 20px;
+  left: 10px;
+  z-index: 5;
+  margin: 20px;
+  /* height: 50px; */
+}
+
+#music-box h6 {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 10px;
+  margin: 0;
+  height: 100%;
+  width: 0;
+  transform: scale(0);
+  text-align: center;
+  color: var(--grey-300);
+  transition: width 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.music-btn {
+  border: solid #2e444b 2px;
+  box-shadow: 0px 0px 6px #666363;
+  background: #b3b3b3;
+  background-image: linear-gradient(to bottom, #9b9999, #19242b);
+}
+
+#music-box.active h6 {
+  width: 210px;
+  transform: scale(1);
+}
+
+/* mobile screen */
+@media screen and (max-width:600px) {
+  #music-box {
+    margin: 5px;
+  }
+  #music-box h6 {
+    height: 44px;
+    bottom: 6px;
+    font-size: .95rem;
+  }
+}
+
+.music-icon {
+  filter: blur(.5px);
+  margin-top: 3px;
+  transition: transform 1.4s ease-out;
+  font-size: 1.7rem;
+}
+
+.music-btn:hover .music-icon {
+  transform: rotate(360deg);
+}
+
+.music-btn:active {
+  background-image: linear-gradient(to bottom, #808080, #131c22);
+}
+
+.next-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--grey-300);
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  bottom: 47%;
+  transform: translate(-0%, 50%);
+}
+
+@media screen and (max-width:600px) {
+  #music-box {
+    padding: 6px 20px;
+  }
+  
+  .music-icon {
     font-size: 1.3rem;
   }
 }
