@@ -9,7 +9,7 @@ const DisplayCards = ({numOfCards}) => {
     
         // loop to get num of cards then shuffle them
         // to get a random #(img) for selecting random images
-        for (let i = 1; i <= num; i++){
+        for (let i = 1; i <= 18; i++){
         randomNum.push(i)
         }
         shuffleCards(randomNum)
