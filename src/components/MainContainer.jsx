@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import useDragger from '../hooks/useDragger';
 import CardsArea from './CardsArea';
-import GameStats from './GameStats';
-import Menu from './Menu';
 import title from '../assets/title.png'
+import { RiDragMove2Fill } from "react-icons/ri";
 
 
 const MainContainer = () => {
@@ -22,7 +21,7 @@ const MainContainer = () => {
             <div id='cards-box'>
                 <div className='snow-cap'></div>
                 <CardsArea active={showCards} setActive={setShowCards}/>
-                {/* <GameStats active={showCards} /> */}
+                <RiDragMove2Fill className='drag-icon'/>
             </div>
         </section>
         )
