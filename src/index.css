@@ -537,7 +537,7 @@ aside.active {
 #toggle-box {
   position: absolute;
   bottom: 20px;
-  right: 10px;
+  left: 10px;
   z-index: 5;
   margin: 20px;
 }
@@ -589,12 +589,10 @@ transform: translateY(-1px)
 /* music toggle */
 #music-box {
   position: absolute;
-  /* overflow: hidden; */
   bottom: 20px;
-  left: 10px;
+  left: 72px;
   z-index: 5;
   margin: 20px;
-  /* height: 50px; */
 }
 
 #music-box h6 {
