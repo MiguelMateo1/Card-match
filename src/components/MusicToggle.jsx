@@ -43,7 +43,7 @@ function MusicToggle() {
                 </button>
             </h6>
             <button className="music-btn btn" onClick={handleClick}>
-                {isPlaying ? <FaPause className="music-icon"></FaPause> 
+                {isPlaying ? <FaPause className="music-icon pause"></FaPause> 
                 : <FaMusic className="music-icon"></FaMusic>}
             </button>
         </div>

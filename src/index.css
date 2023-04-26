@@ -625,6 +625,10 @@ transform: translateY(-1px)
   background-image: linear-gradient(to bottom, #9b9999, #19242b);
 }
 
+.pause {
+  color: #94a3b8;
+}
+
 #music-box.active h6 {
   width: 210px;
   transform: scale(1);
