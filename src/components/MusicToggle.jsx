@@ -7,9 +7,8 @@ import { musicList } from "../audios";
 function MusicToggle() {
     const musicBoxRef = useRef(null);
     const audioElement = useRef(null);
-    const [songs, setSongs] = useState(musicList);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currentSong, setCurrentSong] = useState(songs[0]);
+    const [currentSong, setCurrentSong] = useState(musicList[0]);
 
     function handleClick () {
         musicBoxRef.current.classList.toggle('active')
@@ -17,16 +16,16 @@ function MusicToggle() {
     };
 
     function nextSongClick () {
-        if (currentSong.key == songs.length) {
-            setCurrentSong(songs[0])
+        if (currentSong.key == musicList.length) {
+            setCurrentSong(musicList[0])
         } else {
-            setCurrentSong(songs[currentSong.key]) 
+            setCurrentSong(musicList[currentSong.key]) 
         }
         setIsPlaying(true)
     };
 
     useEffect(() => {
-        audioElement.current.volume = 0.07
+        audioElement.current.volume = 0.4
         if (isPlaying) {
             audioElement.current.play();
         } else {
