@@ -19,7 +19,7 @@ const WeatherBox = () => {
             <div id='toggle-box'>
                 <button type='button' className='btn toggle-btn' onClick={toggleSnow}>
                     <FaSnowflake 
-                    style={{color: snow <= -30 && "#0f172a" || 
+                    style={{color: snow <= -30 && "#000" || 
                     snow == 50 && "#94a3b8" || 
                     snow == 130 && "f1f5f9"}} 
                     className='snow-icon'/>
