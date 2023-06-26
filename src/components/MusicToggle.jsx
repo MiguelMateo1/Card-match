@@ -25,11 +25,13 @@ function MusicToggle() {
     };
 
     useEffect(() => {
-        audioElement.current.volume = 0.4
+        const ele =  audioElement.current;
+        ele.volume = 0.5
+        ele.crossOrigin = "anonymous";
         if (isPlaying) {
-            audioElement.current.play();
+            ele.play();
         } else {
-            audioElement.current.pause();
+            ele.pause();
         }
     },[isPlaying,currentSong]);
 
