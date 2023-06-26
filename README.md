@@ -3,7 +3,8 @@
 
 A simple card matching game build to showcase react.js skills and web design skills.
 
-add link here...
+LINK
+https://card-match-miguel.netlify.app/
 
 ## Features
 
