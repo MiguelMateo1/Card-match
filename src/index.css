@@ -124,6 +124,10 @@ ul {
 .btn:hover {
   border-color: #646cff;
 }
+
+.btn:focus {
+  color: #000;
+}
 /*======================================== end gloval styles */
 
 section {
@@ -231,7 +235,7 @@ section {
     margin: 0;
     padding: 0;
     padding-bottom: 30px;
-  }  
+  } 
 }
 
 .snow-cap {
@@ -280,6 +284,10 @@ section {
 .level-selected-text {
   font-size: 1rem;
   margin-top: 3px;
+}
+
+.level-num {
+  color: #1976e0;
 }
 
 .cards {
@@ -540,7 +548,6 @@ aside.active {
 }
 
 .snow-icon {
-  filter: blur(.5px);
   margin-top: 3px;
   transition: transform 1.4s ease-out;
   font-size: 1.7rem;
@@ -564,16 +571,6 @@ aside.active {
 
 .toggle-btn:hover {
 transform: translateY(-1px)
-}
-
-@media screen and (max-width:600px) {
-  #toggle-box {
-    padding: 6px 20px;
-  }
-  
-  .snow-icon, .day-icon {
-    font-size: 1.3rem;
-  }
 }
 
 /* music toggle */
@@ -615,32 +612,20 @@ transform: translateY(-1px)
   background-image: linear-gradient(to bottom, #9b9999, #19242b);
 }
 
-.pause {
-  color: #94a3b8;
-}
-
 #music-box.active h6 {
   width: 210px;
   transform: scale(1);
 }
 
-/* mobile screen */
-@media screen and (max-width:600px) {
-  #music-box {
-    margin: 5px;
-  }
-  #music-box h6 {
-    height: 44px;
-    bottom: 6px;
-    font-size: .95rem;
-  }
-}
-
 .music-icon {
-  filter: blur(.5px);
   margin-top: 3px;
   transition: transform 1.4s ease-out;
   font-size: 1.7rem;
+  color: #000;
+}
+
+.pause {
+  color: #94a3b8;
 }
 
 .music-btn:hover .music-icon {
@@ -660,16 +645,38 @@ transform: translateY(-1px)
   cursor: pointer;
   position: absolute;
   right: 15px;
-  bottom: 47%;
+  bottom: 44%;
   transform: translate(-0%, 50%);
 }
 
+/* mobile screen */
 @media screen and (max-width:600px) {
-  #music-box {
-    padding: 6px 20px;
+  #toggle-box {
+    padding: 6px 10px;
+    bottom: none;
+    top: 13px;
   }
-  
+  .snow-icon, .day-icon {
+    font-size: 1.3rem;
+  }
+  #music-box {
+    margin: 5px;
+    padding: 6px 5px;
+    top: 13px;
+    bottom: none;
+  }
   .music-icon {
     font-size: 1.3rem;
+  }
+  #music-box h6 {
+    margin-bottom: 2px;
+    margin-left: 4px;
+    height: 44px;
+    bottom: none;
+    top: 8.5px;
+    font-size: .95rem;
+  }
+  .next-btn {
+    bottom: 39%;
   }
 }

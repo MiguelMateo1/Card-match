@@ -6,7 +6,7 @@ const Menu = ({start,end,levelSelect,active,selectedLevel}) => {
             {active && <button className="btn end-btn" onClick={end}>End</button>}
             {!active && <button className="btn" onClick={start}>Start</button>}
             {!active && <button className="btn" onClick={levelSelect}>Level</button>}
-            {!active && <h5 className="level-selected-text">Selected level: {selectedLevel}</h5>}
+            {!active && <h5 className="level-selected-text">Selected level: <span className="level-num">{selectedLevel}</span></h5>}
         </div>
         )
 }
