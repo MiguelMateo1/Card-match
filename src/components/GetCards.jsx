@@ -18,7 +18,7 @@ const GetCards = ({numOfCards}) => {
     }
 
     function cardMatchedSound () {
-        let audio = new Audio('../public/music/mached-sound.mp3')
+        let audio = new Audio('/music/mached-sound.mp3')
         audio.volume = 0.04
         audio.play()
         setMatchedCards(matchedCards + 1)
