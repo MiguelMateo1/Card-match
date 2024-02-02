@@ -1,7 +1,7 @@
 # Card Match Game
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-A simple card matching game build to showcase react.js skills and web design skills.
+A simple card matching game build in react. 
 
 LINK
 https://card-match-miguel.netlify.app/
